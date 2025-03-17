@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InCampus - College Social Hub</title>
+    <meta name="description" content="InCampus - A social media platform for college students">
+    <meta property="og:title" content="InCampus - College Social Hub">
+    <meta property="og:description" content="Your College Social Hub">
+    <meta property="og:image" content="https://github.com/aAkAsHlIbU/Prueba/blob/main/assets/images/InCampus.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #2ECC71;
+            --background-color: #fafafa;
+            --text-color: #333;
+            --gradient: linear-gradient(45deg, #833AB4, #FD1D1D, #F77737);
+            --card-bg: #2A2438;
+            --card-hover-bg: #352F44;
+            --card-text: #E9E8E8;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            animation: fadeIn 1s ease-in;
+            text-align: center;
+        }
+
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 1rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-top: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--gradient);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        li {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            text-align: center;
+            color: var(--card-text);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: var(--card-hover-bg);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            background: var(--gradient);
+            color: white;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 2px;
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .feature-card, .feature-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            color: var(--card-text);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature-card:hover, .feature-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: var(--card-hover-bg);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .feature-card h3, .feature-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        .detailed-features ul li {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0.5rem;
+        }
+
+        .detailed-features ul li:hover {
+            transform: none;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .hero {
+            background: var(--gradient);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .download-btn {
+            background: white;
+            color: #833AB4;
+            padding: 1rem 3rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>📚 InCampus</h1>
+        <p>Your College Social Hub 🎓</p>
+        <a href="https://github.com/aAkAsHlIbU/Prueba/releases/tag/v.0.1" class="download-btn">Download App</a>
+    </div>
+
+    <div class="container">
+        <h2>About InCampus</h2>
+        <p>InCampus is a vibrant social media platform tailored exclusively for college students, fostering connections, sharing experiences, and enhancing campus life.</p>
+
+        <section class="features" aria-label="Main Features">
+            <article class="feature-card">
+                <h3 aria-label="Stories and Posts Feature">🤳 Stories & Posts</h3>
+                <p>Share your daily campus moments through engaging photo and video stories.</p>
+            </article>
+            <div class="feature-card">
+                <h3>🎥 Reels</h3>
+                <p>Create and watch short, entertaining videos showcasing college life.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💬 Chat</h3>
+                <p>Connect with classmates through private messaging and community chats.</p>
+            </div>
+            <div class="feature-card">
+                <h3>👥 Friends</h3>
+                <p>Build your college network by adding friends and following updates.</p>
+            </div>
+        </section>
+
+        <div class="detailed-features">
+            <h2>Detailed Features</h2>
+            
+            <div class="feature-section">
+                <h3>🔔 Notifications</h3>
+                <p>Stay updated with friend requests, likes, comments, and important campus news.</p>
+            </div>
+
+            <div class="feature-section">
+                <h3>👤 Profile</h3>
+                <p>Customize your profile to showcase your interests, achievements, and campus involvement.</p>
+            </div>
+
+            <div class="feature-section admin-features">
+                <h3>👨‍💼 Administrative Features</h3>
+                <ul>
+                    <li>User Management: Approve/disable user accounts</li>
+                    <li>Department Management: Add and manage academic departments</li>
+                    <li>Teacher Assignment: Assign class teachers to departments</li>
+                    <li>Analytics Dashboard: View user statistics and department distribution</li>
+                    <li>Role-based Access Control: Manage user roles and permissions</li>
+                </ul>
+            </div>
+
+            <div class="feature-section staff-features">
+                <h3>👩‍🏫 Staff Features</h3>
+                <ul>
+                    <li>Student Approvals: Review and approve student registrations</li>
+                    <li>Class Management: Manage class rosters and student information</li>
+                    <li>Community Moderation: Oversee and moderate student communities</li>
+                    <li>Academic Updates: Share important academic announcements</li>
+                    <li>Student Progress Tracking: Monitor student engagement and activities</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li>Secure Authentication System</li>
+            <li>Content Moderation</li>
+            <li>Department Management</li>
+            <li>Role-based Access Control</li>
+            <li>Real-time Updates</li>
+            <li>Media Sharing</li>
+        </ul>
+
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>Flutter</li>
+            <li>Firebase (Authentication, Realtime Database, Storage)</li>
+            <li>CameraAwesome</li>
+            <li>Video Compress</li>
+            <li>Razorpay Payment Gateway</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>© 2024 InCampus. All rights reserved.</p>
+        <a href="https://github.com/aAkAsHlIbU/Prueba">View on GitHub</a>
+    </footer>
+</body>
+</html>
